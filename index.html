@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Neon Arena</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:#05010d;color:white;font-family:"Poppins",sans-serif;}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 8%;background:#0a001c;border-bottom:2px solid #7a2cff;box-shadow:0 2px 15px rgba(122,44,255,0.3);}
+nav h1{font-family:"Orbitron",sans-serif;color:#c39cff;text-shadow:0 0 20px #7a2cff;font-size:32px;letter-spacing:1.5px;}
+nav ul{display:flex;gap:30px;list-style:none;}
+nav a{text-decoration:none;color:#ddd;font-size:15px;transition:.3s;}
+nav a:hover{color:#c39cff;text-shadow:0 0 10px #7a2cff;transform:translateY(-2px);}
+.hero{height:90vh;background:linear-gradient(rgba(5,1,13,0.7),rgba(5,1,13,0.95)), url("https://images.unsplash.com/photo-1542751371-adc38448a05e");background-size:cover;background-position:center;background-attachment:fixed;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px;}
+.hero h2{font-family:"Orbitron";font-size:60px;color:#ff94f0;text-shadow:0 0 30px #7a2cff;}
+.hero p{margin-top:15px;color:#ccc;font-size:18px;max-width:800px;}
+.hero button{margin-top:30px;padding:14px 40px;background:#7a2cff;border:none;color:white;border-radius:30px;cursor:pointer;font-weight:600;box-shadow:0 0 20px #7a2cff;transition:.3s;}
+.hero button:hover{transform:translateY(-4px);box-shadow:0 0 35px #c39cff;}
+.about{padding:90px 12%;text-align:center;background:#070013;}
+.about h2{font-family:"Orbitron";font-size:38px;color:#c39cff;margin-bottom:20px;text-shadow:0 0 15px #7a2cff;}
+.about p{margin-top:20px;max-width:900px;margin-left:auto;margin-right:auto;color:#bbb;font-size:17px;line-height:1.7;}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;margin-top:50px;}
+.feature{background:#0c0022;padding:25px;border-radius:12px;transition:.3s;text-align:center;}
+.feature i{font-size:32px;color:#a970ff;margin-bottom:10px;}
+.feature:hover{transform:translateY(-10px);box-shadow:0 0 25px #7a2cff;}
+.showcase{padding:60px 0;background:#070013;overflow:hidden;position:relative;}
+.marquee-container{display:flex;width:200%;animation:marquee 30s linear infinite;}
+.marquee-container img{width:220px;border-radius:12px;box-shadow:0 0 20px #7a2cff;margin-right:20px;transition:transform .3s;}
+.marquee-container img:hover{transform:scale(1.05);box-shadow:0 0 30px #ff94f0;}
+@keyframes marquee{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+.games{padding:80px 10%;text-align:center;}
+.games h2{font-family:"Orbitron";font-size:34px;color:#c39cff;margin-bottom:40px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;}
+.card{background:#0c0022;border-radius:12px;overflow:hidden;transition:.35s;cursor:pointer;}
+.card img{width:100%;}
+.card h3{padding:15px;}
+.card:hover{transform:translateY(-12px);box-shadow:0 0 25px #7a2cff;}
+.video{padding:80px 10%;text-align:center;}
+.video h2{font-family:"Orbitron";color:#c39cff;margin-bottom:25px;}
+video{width:80%;border-radius:12px;box-shadow:0 0 25px #7a2cff;}
+.booking{padding:90px 10%;display:flex;justify-content:center;}
+.booking-box{background:#0b0020;padding:40px;border-radius:15px;width:400px;text-align:center;box-shadow:0 0 35px rgba(122,44,255,0.35);}
+.booking-box h2{font-family:"Orbitron";color:#c39cff;margin-bottom:30px;}
+.input-group{position:relative;margin-bottom:15px;text-align:left;}
+.input-group i{position:absolute;left:12px;top:12px;color:#a970ff;}
+.input-group input,.input-group select{width:100%;padding:12px 12px 12px 38px;border:none;border-radius:6px;background:#140033;color:white;}
+.booking-box .time-select, .booking-box .date-select{display:flex;gap:10px;margin-bottom:15px;}
+.booking-box .time-select select, .booking-box .date-select select{flex:1;padding:10px;border-radius:6px;background:#140033;color:white;border:none;}
+.booking button{margin-top:15px;padding:12px 30px;background:#7a2cff;border:none;color:white;border-radius:25px;cursor:pointer;box-shadow:0 0 15px #7a2cff;transition:.3s;font-weight:500;}
+.booking button:hover{transform:translateY(-3px);box-shadow:0 0 25px #c39cff;}
+.contact{padding:80px 10%;text-align:center;background:#080018;}
+.contact h2{font-family:"Orbitron";color:#c39cff;margin-bottom:15px;}
+.contact p{margin:8px;font-size:16px;}
+footer{text-align:center;padding:20px;color:#777;}
+</style>
+</head>
+<body>
+<nav>
+<h1>Neon Arena</h1>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#showcase">Showcase</a></li>
+<li><a href="#games">Games</a></li>
+<li><a href="#video">Highlights</a></li>
+<li><a href="#booking">Booking</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+<section class="hero" id="home">
+<h2>Next-Level Gaming Arena</h2>
+<p>Step into Neon Arena, where gaming is not just a hobby but an experience. 
+Our high-end PCs, latest consoles, VR setups, and dedicated esports tournaments 
+create the ultimate environment for players of all levels.</p>
+<button onclick="scrollBooking()">Book Your Slot</button>
+</section>
+<section class="about" id="about">
+<h2>About Neon Arena</h2>
+<p>Neon Arena is a premium gaming hub designed for competitive gamers, casual players, 
+and content creators alike. With immersive VR zones, lightning-fast PCs, console lounges, 
+and professional tournament setups, we provide an environment where gaming thrives. 
+Our mission is to combine technology, entertainment, and community for an unforgettable 
+gaming experience in Kathmandu.</p>
+<div class="features">
+<div class="feature"><i class="fa-solid fa-microchip"></i><h3>High-End PCs</h3><p>RTX powered gaming rigs.</p></div>
+<div class="feature"><i class="fa-solid fa-gamepad"></i><h3>Console Lounge</h3><p>PlayStation & Xbox zones.</p></div>
+<div class="feature"><i class="fa-solid fa-vr-cardboard"></i><h3>VR Gaming</h3><p>Immersive virtual reality adventures.</p></div>
+<div class="feature"><i class="fa-solid fa-trophy"></i><h3>Esports Tournaments</h3><p>Compete weekly and show off your skills.</p></div>
+</div>
+</section>
+<section class="showcase" id="showcase">
+<div class="marquee-container">
+<img src="https://images.unsplash.com/photo-1603481588273-2f908a9a7a1b">
+<img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7">
+<img src="https://images.unsplash.com/photo-1542751371-adc38448a05e">
+<img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f">
+<img src="https://images.unsplash.com/photo-1603481588273-2f908a9a7a1b">
+<img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7">
+<img src="https://images.unsplash.com/photo-1542751371-adc38448a05e">
+<img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f">
+</div>
+</section>
+<section class="games" id="games">
+<h2>Popular Games</h2>
+<div class="grid">
+<div class="card"><img src="https://images.unsplash.com/photo-1603481588273-2f908a9a7a1b"><h3>FIFA</h3></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7"><h3>Call of Duty</h3></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1542751371-adc38448a05e"><h3>Valorant</h3></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f"><h3>VR Gaming</h3></div>
+</div>
+</section>
+<section class="video" id="video">
+<h2>Gaming Highlights</h2>
+<video controls autoplay muted loop>
+<source src="https://www.w3schools.com/html/mov_bbb.mp4">
+</video>
+</section>
+<section class="booking" id="booking">
+<div class="booking-box">
+<h2>Book Your Session</h2>
+<div class="input-group"><i class="fa-solid fa-user"></i><input type="text" placeholder="Your Name"></div>
+<div class="input-group"><i class="fa-solid fa-gamepad"></i>
+<select>
+<option>Select Game</option>
+<option>PlayStation 5</option>
+<option>PC Gaming</option>
+<option>VR Gaming</option>
+<option>FIFA Tournament</option>
+</select></div>
+<div class="date-select">
+<select><option>Date</option><option>12</option><option>13</option><option>14</option></select>
+<select><option>Month</option><option>March</option><option>April</option></select>
+<select><option>Year</option><option>2026</option></select>
+</div>
+<div class="time-select">
+<select>
+<option>10:00 AM</option><option>12:00 PM</option><option>2:00 PM</option>
+<option>4:00 PM</option><option>6:00 PM</option>
+</select>
+</div>
+<button onclick="book()">Confirm Booking</button>
+<p id="bookText"></p>
+</div>
+</section>
+<section class="contact" id="contact">
+<h2>Contact Us</h2>
+<p><i class="fa-solid fa-envelope"></i> arena@email.com</p>
+<p><i class="fa-solid fa-phone"></i> +977 9800000000</p>
+<p><i class="fa-solid fa-location-dot"></i> Kathmandu, Nepal</p>
+</section>
+<footer>© 2026 Neon Arena</footer>
+<script>
+function book(){document.getElementById("bookText").innerText="Booking Confirmed!";}
+function scrollBooking(){document.getElementById("booking").scrollIntoView({behavior:"smooth"});}
+</script>
+</body>
+</html>
